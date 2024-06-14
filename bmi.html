@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator - Healthcare Clinic</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="images/logo.jpg" alt="Healthcare Clinic Logo" class="logo">
+      <nav>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav no-search">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <a href="services.html">Services <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="services.html#general-checkups">General Check-ups</a></li>
+              <li><a href="services.html#pediatrics">Pediatrics</a></li>
+              <li><a href="services.html#cardiology">Cardiology</a></li>
+              <li><a href="services.html#orthopedics">Orthopedics</a></li>
+            </ul>
+          </li>
+          <li><a href="bmi.html">BMI Calculator</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="bmi-calculator">
+    <div class="container">
+      <h1>BMI Calculator</h1>
+      <div class="bmi-content">
+        <div class="bmi-text">
+          <p>Body Mass Index (BMI) is a measure of body fat based on height and weight that applies to adult men and women. Use this calculator to check your BMI and understand what it means.</p>
+          <img src="images/bmi.jpg" alt="BMI Illustration">
+        </div>
+        <div class="bmi-form">
+          <h2>Calculate Your BMI</h2>
+          <form id="bmiForm">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+          </form>
+          <div id="bmiResult"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Healthcare Clinic. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function calculateBMI() {
+      const height = document.getElementById('height').value;
+      const weight = document.getElementById('weight').value;
+      if (height && weight) {
+        const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+        let result = `Your BMI is ${bmi}. `;
+        if (bmi < 18.5) {
+          result += 'You are underweight.';
+        } else if (bmi < 24.9) {
+          result += 'You have a normal weight.';
+        } else if (bmi < 29.9) {
+          result += 'You are overweight.';
+        } else {
+          result += 'You are obese.';
+        }
+        document.getElementById('bmiResult').innerText = result;
+      } else {
+        document.getElementById('bmiResult').innerText = 'Please enter both height and weight.';
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.dropdown').addEventListener('click', function() {
+        this.querySelector('.dropdown-content').classList.toggle('show');
+      });
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown a')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

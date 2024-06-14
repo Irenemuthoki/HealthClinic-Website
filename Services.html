@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Healthcare Clinic</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="images/logo.jpg" alt="Healthcare Clinic Logo" class="logo">
+      <nav>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav no-search">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown">
+            <a href="#">Services <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-content">
+              <li><a href="#general-checkups">General Check-ups</a></li>
+              <li><a href="#pediatrics">Pediatrics</a></li>
+              <li><a href="#cardiology">Cardiology</a></li>
+              <li><a href="#orthopedics">Orthopedics</a></li>
+            </ul>
+          </li>
+          <li><a href="bmi.html">BMI Calculator</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="container">
+      <h1>Our Services</h1>
+      <div class="service-detail" id="general-checkups" data-aos="fade-up">
+        <h2>General Check-ups</h2>
+        <img src="images/checkups.jpg" alt="General Check-ups">
+        <p>Our general check-ups are designed to assess your overall health and detect any potential health issues early on. Regular check-ups help in maintaining a healthy lifestyle and preventing future health problems. Our experienced healthcare professionals will provide a comprehensive examination and personalized advice for your health.</p>
+      </div>
+
+      <div class="service-detail" id="pediatrics" data-aos="fade-up">
+        <h2>Pediatrics</h2>
+        <img src="images/pediatric.jpg" alt="Pediatrics">
+        <p>Our pediatric services offer specialized care for infants, children, and adolescents. We focus on the physical, emotional, and social health of children from birth to young adulthood. Our team of pediatricians is dedicated to providing the highest quality of care to ensure the well-being of your child.</p>
+      </div>
+
+      <div class="service-detail" id="cardiology" data-aos="fade-up">
+        <h2>Cardiology</h2>
+        <img src="images/cardiology.jpg" alt="Cardiology">
+        <p>Our cardiology services include comprehensive care for patients with heart-related conditions. Our cardiologists are experts in diagnosing and treating cardiovascular diseases. We offer a range of services including heart health assessments, treatment of heart diseases, and preventive care to maintain a healthy heart.</p>
+      </div>
+
+      <div class="service-detail" id="orthopedics" data-aos="fade-up">
+        <h2>Orthopedics</h2>
+        <img src="images/orthopedics.jpg" alt="Orthopedics">
+        <p>Our orthopedic services focus on the diagnosis, treatment, and prevention of disorders related to the musculoskeletal system. Whether you are dealing with a sports injury, arthritis, or any other orthopedic condition, our specialists are here to provide the best possible care and help you regain your mobility and strength.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Healthcare Clinic. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.dropdown').addEventListener('click', function() {
+        this.querySelector('.dropdown-content').classList.toggle('show');
+      });
+    });
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown a')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

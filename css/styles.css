@@ -1,0 +1,427 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background:#e7e6e6;
+    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: rgba(8, 138, 224, 0.8);
+    color: #fff;
+    padding: 10px 0;
+   
+}
+
+header .logo {
+    width: 80px;
+    display: inline-block;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #121213;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header nav ul li a:hover {
+    color: hwb(0 0% 0%);
+}
+
+#mobile-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    #mobile-menu {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #0e0d0d;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #00aaff;
+    color: #fff;
+}
+
+.show {
+    display: block;
+}
+#home {
+    text-align: center;
+    padding: 50px 20px;
+    color: #fff;
+}
+
+.carousel {
+    margin: 10px 0;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.carousel-image-container {
+    padding: 0 10px;
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Smooth transition for carousel */
+.slick-slide {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Style for appointment section */
+.appointment-section {
+    margin-top: 30px;
+    text-align: left;
+    background: rgba(27, 26, 26, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    
+}
+
+.appointment-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #d64a4a;
+}
+
+.appointment-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.appointment-section .form-group {
+    margin-bottom: 15px;
+}
+
+.appointment-section form input,
+.appointment-section form textarea,
+.appointment-section form button {
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.appointment-section form button {
+    background: #00aaff;
+    color: #1f1e1e;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.appointment-section form button:hover {
+    background: #0077cc;
+}
+#about {
+    padding: 50px 20px;
+    color: #333;
+    background: rgba(236, 231, 231, 0.9);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.about-text {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.about-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#details {
+    padding: 50px 20px;
+    color: #333;
+    background: rgba(233, 231, 231, 0.9);
+}
+
+.details-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.working-hours,
+.contact-location {
+    flex: 1;
+    min-width: 300px;
+}
+
+.working-hours h2,
+.contact-location h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.working-hours ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+}
+
+.working-hours ul li {
+    margin-bottom: 10px;
+}
+
+.contact-location p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#services {
+    padding: 50px 20px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+#services h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.service-detail {
+    margin-top: 40px;
+}
+
+.service-detail h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.service-detail img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.service-detail p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+/* Style for BMI Calculator page */
+
+#bmi-calculator {
+    padding: 50px 20px;
+    color: #333;
+    background: rgba(224, 222, 222, 0.9);
+}
+
+#bmi-calculator h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.bmi-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:center;
+}
+
+.bmi-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.bmi-text img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.bmi-form {
+    flex: 1;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bmi-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bmi-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.bmi-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bmi-form button:hover {
+    background-color: #0077cc;
+}
+
+#bmiResult {
+    margin-top: 20px;
+    font-size: 18px;
+}
+#contact {
+    padding: 50px 0;
+    background: #eee9e9;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+}
+
+.contact-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.contact-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contact-form {
+    flex: 2;
+}
+
+.contact-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-form p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #0077cc;
+}
+footer {
+    background: rgba(8, 138, 224, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
